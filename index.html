@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Team Page</title>
+</head>
+<style>
+  @import url('https://fonts.cdnfonts.com/css/pt-serif');
+  @import url('https://fonts.cdnfonts.com/css/poppins');
+  @import url('https://fonts.cdnfonts.com/css/montserrat');
+  :root{
+    /**COLORS*/
+    --main-color-black: #000000;
+    --footer-color-grey: #B4B4B4;
+    /*FONTS*/
+    --font-poppins:'Poppins';
+    --font-PT-serif:'PT Serif';
+    --font-montserrat:'Montserrat';
+  }
+  h1{
+    font-family: var(--font-PT-serif);  
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: -0.045em;
+    color:var(--main-color-black);
+  }
+  .title_h2{
+    font-family: var(--font-poppins);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color:var(--main-color-black);
+  }
+  .subtitle{
+    font-family: var(--font-poppins);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color:var(--main-color-black);
+    margin-top: 15px;
+  }
+  img{
+    width: 100%; /*I set GENERAL img width to 100% because there is no other img on this page otherwise I wouldn't do it */
+  }
+  .gallery_mobile{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .gallery_mobile .row_1_col_2,.row_2_col_2,.row_3_col_2{
+      display: flex;
+      margin-top: 5em;
+    }
+    .row_1_col_1,
+    .row_1_col_2,
+    .row_2_col_1,
+    .row_2_col_2,
+    .row_3_col_1,
+    .row_3_col_2{
+      margin-right: 1em;
+    }
+    .gallery_row_1,
+    .gallery_row_2,
+    .gallery_row_3{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1em 0 1em 2em;
+    }
+    .gallery_desktop{
+      display: none;
+    }
+    .crew_member_info{
+      display: flex;
+    }
+    .crew_member_job{
+      writing-mode: vertical-rl;
+      margin-left: 5px;
+      font-family: var(--font-PT-serif);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 13px;
+      text-transform: uppercase;
+      color: var(--main-color-black)
+    }
+    .crew_member_name{
+      font-family: var(--font-poppins);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--main-color-black)
+    }
+  footer{
+    color: var(--footer-color-grey);
+    font-family: var(--font-montserrat);
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  @media (min-width:768px){
+    .the_header{
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 2em;
+    }
+    .container_h2_subtitle{
+      margin-top: 5em;
+    }
+    .gallery_mobile{
+      display: none;
+    }
+    .gallery_desktop{
+      display: flex;
+      flex-direction: column;
+    }
+    .subtitle {
+        font-family: var(--font-poppins);
+        width: 45%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--main-color-black);
+        margin-top: 15px;
+    }
+    .crew_member_job{
+      writing-mode: vertical-rl;
+      font-family: var(--font-PT-serif);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 13px;
+      text-transform: uppercase;
+      color: var(--main-color-black)
+    }
+    .crew_member_name{
+      font-family: var(--font-poppins);
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--main-color-black)
+    }
+    .container_img_row_1_col_1,
+    .container_img_row_1_col_2,
+    .container_img_row_1_col_3,
+    .container_img_row_2_col_1,
+    .container_img_row_2_col_2,
+    .container_img_row_2_col_3{
+      width: 75%;
+    }
+    .gallery_row_1_col_2,
+    .gallery_row_2_col_2{
+      display: flex;
+      margin-top: 5em;
+    }
+  }
+</style>
+<body>
+  <div class="container_page" id="app">
+    <div class="the_header">
+      <div class="title_h1">
+        <h1>{{title}}</h1>
+      </div>
+      <div class="container_h2_subtitle">
+        <div class="title_h2"> {{title_h2}}</div>
+        <div class="subtitle">{{subtitle}}</div>
+      </div>
+    </div>
+    <div class="gallery_mobile">
+      <div class="gallery_row_1">
+        <div class="row_1_col_1">
+          <div class="crew_member_info">
+            <div class="container_img_crew_row_1_col_1">
+              <img src="./assets/images/photo1.png" alt="Photo 1" class="content_img_crew_row_1_col_1">
+              <div class="crew_member_name">Bill Mahoney</div>
+            </div>
+            <div class="crew_member_job">Product owner</div>
+          </div>
+        </div>
+        <div class="row_1_col_2">
+          <div class="crew_member_info">
+            <div class="container_img_crew_row_1_col_2">
+              <img src="./assets/images/photo2.png" alt="Photo 2" class="content_img_crew_row_1_col_2">
+              <div class="crew_member_name">Saba Cabrera</div>
+            </div>
+            <div class="crew_member_job">Art director</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery_row_2">
+        <div class="row_2_col_1">
+          <div class="crew_member_info">
+            <div class="container_img_crew_row_2_col_1">
+              <img src="./assets/images/photo3.png" alt="Photo 3" class="content_img_crew_row_2_col_1">
+              <div class="crew_member_name">Shae Le</div>
+            </div>
+            <div class="crew_member_job">Tech Lead</div>
+          </div>
+        </div>
+        <div class="row_2_col_2">
+          <div class="crew_member_info">
+            <div class="container_img_crew_row_2_col_2">
+              <img src="./assets/images/photo4.png" alt="Photo 4" class="content_img_crew_row_2_col_2">
+              <div class="crew_member_name">Skylah Lu</div>
+            </div>
+            <div class="crew_member_job">UX Designer</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery_row_3">
+        <div class="row_3_col_1">
+          <div class="crew_member_info">
+            <div class="container_img_crew_row_3_col_1">
+              <img src="./assets/images/photo5.png" alt="Photo 5" class="content_img_crew_row_3_col_1">
+              <div class="crew_member_name">Griff Richards</div>
+            </div>
+            <div class="crew_member_job">Developer</div>
+          </div>
+        </div>
+        <div class="row_3_col_2">
+          <div class="crew_member_info">
+            <div class="container_img_crew_row_3_col_2">
+              <img src="./assets/images/photo6.png" alt="Photo 6" class="content_img_crew_row_3_col_2">
+              <div class="crew_member_name">Stan John</div>
+            </div>
+            <div class="crew_member_job">Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gallery_desktop">
+      <div class="gallery_row_1">
+        <div class="gallery_row_1_col_1">
+          <div class="crew_member_info">
+            <div class="container_img_row_1_col_1">
+              <img src="./assets/images/photo1.png" alt="Photo 1" class="content_img_row_1_col_1">
+              <div class="crew_member_name">Bill Mahoney</div>
+            </div>
+            <div class="crew_member_job">Product owner</div>
+          </div>
+        </div>
+        <div class="gallery_row_1_col_2">
+          <div class="crew_member_info">
+            <div class="container_img_row_1_col_2">
+              <img src="./assets/images/photo2.png" alt="Photo 2" class="content_img_row_1_col_2">
+              <div class="crew_member_name">Saba Cabrera</div>
+            </div>
+            <div class="crew_member_job">Art director</div>
+          </div>
+        </div>
+        <div class="gallery_row_1_col_3">
+          <div class="crew_member_info">
+            <div class="container_img_row_1_col_3">
+              <img src="./assets/images/photo3.png" alt="Photo 3" class="content_img_row_1_col_3">
+              <div class="crew_member_name">Shae Le</div>
+            </div>
+            <div class="crew_member_job">Tech Lead</div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery_row_2">
+        <div class="gallery_row_2_col_1">
+          <div class="crew_member_info">
+            <div class="container_img_row_2_col_1">
+              <img src="./assets/images/photo4.png" alt="Photo 4" class="content_img_row_2_col_1">
+              <div class="crew_member_name">Skylah Lu</div>
+            </div>
+            <div class="crew_member_job">UX Designer</div>
+          </div>
+        </div>
+        <div class="gallery_row_2_col_2">
+          <div class="crew_member_info">
+            <div class="container_img_row_2_col_2">
+              <img src="./assets/images/photo5.png" alt="Photo 5" class="content_img_row_2_col_2">
+              <div class="crew_member_name">Griff Richards</div>
+            </div>
+            <div class="crew_member_job">Developer</div>
+          </div>
+        </div>
+        <div class="gallery_row_2_col_3">
+          <div class="crew_member_info">
+            <div class="container_img_row_2_col_3">
+              <img src="./assets/images/photo6.png" alt="Photo 6" class="content_img_row_2_col_3">
+              <div class="crew_member_name">Stan John</div>
+            </div>
+            <div class="crew_member_job">Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p> <strong>JeremCrew</strong> - par <i>Jérémie NGOYI MAOLE</i> - Développeur Full Stack</p>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data:{
+          title: "The creative crew",
+          title_h2: "Who we are",
+          subtitle: "We are team of creatively diverse.  driven.  innovative individuals working in various locations from the world."
+        }
+      })
+    </script>
+</body>
+</html>
